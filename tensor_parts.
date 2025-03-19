@@ -1,0 +1,12 @@
+import tensorflow as tf
+
+# Gradient Descent
+
+weights = tf.Variable([tf.randpm.normal()])
+
+while True:     # loop forever
+    with tf.GradientTape() as g:
+        loss = compute_loss(weights)
+        gradient = g.gradient(loss, weights)    #how the landscape changes
+    
+    weights = weights - lr * gradient #lr = learning rate
